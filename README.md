@@ -101,13 +101,13 @@ Usage
 11. Type in `set` command, you'll get confirmation `STORE`:
 
         set hello 0 0 5
-        test
+        world
 
 12. Test if it worked with `get` command, you'll get both `test` and `END` output:
 
         get hello
         VALUE hello 0 5
-        teste
+        world
         END
 
 13. Exit telnet with `CTRL + ]` then `quit`
@@ -119,7 +119,7 @@ Usage
         Escape character is '^]'.
         get hello
         VALUE hello 0 5
-        teste
+        world
         END
 	
 
