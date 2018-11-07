@@ -8,7 +8,4 @@ RUN wget -v -O repcached.tar.gz http://downloads.sourceforge.net/project/repcach
 RUN tar xzf repcached.tar.gz
 RUN cd memcached-1.2.8-repcached-2.2.1 && ./configure --prefix=/usr/local/ --exec-prefix=/usr/local/ --enable-64bit --enable-replication && make && make install
 
-ADD run.sh /run.sh
-RUN chmod 755 /*.sh
-
 EXPOSE 11211
