@@ -8,13 +8,13 @@ Base docker image to run a Repcached server
 How does it work
 -----
 
-As you run a docker image as a container, it will have an IP address setted by Docker's bridge network adapter. You can check  all adapters with `docker network ls`. The ideia behind this experiment is to run two containters in the same machine, so they have different IPs connected by the `bridge` adapter. When binding the `bridge` IP in each repcached process, it's possible to simulate the replication workflow between each instance. 
+As you run a docker image, it will have an IP address setted by Docker's bridge network driver. You can check  all adapters with `docker network ls`. The ideia behind this experiment is to run two containters in the same machine, so they have different IPs connected by the `bridge` driver. When binding the `bridge` IP in each repcached process, it's possible to simulate the replication workflow between each repcached instance. 
 
-To make this work, you'll have to run both containers, check given IPs to each container with `docker network inspect bridge`, access each container with `docker exec -it <name> /bin/bash` and manually change the memcached start command to fit any other parameters you want to change, but must important to add the next container IPs in the `-x` parameter.
+To make this work, you'll have to run both containers, check given IPs to each container with `docker network inspect bridge`, access each container with `docker exec -it <name> /bin/bash` and manually run `memcached` command to with any other parameters you want to change, but must important is to add the next container IPs in the `-x` parameter.
 
-The reason why I'm not using file `run.sh` is that it would already start with slave address to 127.0.0.1 but since we want to experiment between docker containers, we must add the containers IP by the bridge driver, but at the same time the IP will only be given after containers is up. For this reason, you will start both containers as `idle` with `-it --entrypoint /bin/bash`. 
+The reason why I'm not using file `run.sh` is that it would already start with slave address to 127.0.0.1 but since we want to experiment between docker containers, we must add the containers IP by the bridge driver, but at the same time the IP will be given only after containers is up. For this reason, you must start both containers as `idle` with `-it --entrypoint /bin/bash`. 
 
-So far this experiment uses only one direct replication node and ciclic. Broadcasting replication to more than one slave needs to be checked. You can achieve more nodes by chaining them as: `cache3 (slave) -> cache2 (slave) -> cache1 (master)` althought it's unkown the effects of this. In a not so distant future, I'll write a paper about it.
+So far this experiment uses only one direct replication node and it's ciclic, that's it, cache1 replicates cache2 that replicates cache1. Broadcasting replication to more than one slave needs to be checked. You can add more nodes by chaining them as: `cache3 (slave) -> cache2 (slave) -> cache1 (master)` althought it's unkown the effects of this, performance-wise. In a not so distant future, I'll write a paper about it.
 
 Usage is better explained bellow.
 
