@@ -31,10 +31,10 @@ Usage
 	 
 4. Run container cache1 with idle bash, exposing port 11211 so you can write/read memcached's data with telnet:
 
-       $ docker run -d -p 11211:11211 -it --entrypoint /bin/bash repcache-experiment --name cache1
+       $ docker run -d -p 11211:11211 -it --entrypoint /bin/bash --name cache1 repcache-experiment 
 5. Run container cache2 with idle bash too, attaching now host port 11212 to 11211 container's:
 
-       $ docker run -d -p 11212:11211 -it --entrypoint /bin/bash repcache-experiment --name cache2
+       $ docker run -d -p 11212:11211 -it --entrypoint /bin/bash --name cache2 repcache-experiment 
 6. Check for both IPs with
 
        $ docker network inspect bridge
