@@ -90,7 +90,8 @@ Usage
        $ memcached -u root -v -p 11211 -U 11211 -x 172.17.0.2 -P /var/run/memcachedrep.pid -c 1024 -m 64 -t 4
        $ exit
 
-10. Now you can run telnet in both 11211 and 11212 ports of your 127.0.0.1, and check how it behaves. Example taken from: https://www.slideshare.net/gear6memcached/implementing-high-availability-services-for-memcached-1911077
+10. Now you can run telnet in both 11211 and 11212 ports of your 127.0.0.1, and check how it behaves. Example taken from: 
+[Bill Takacs's slides](https://www.slideshare.net/gear6memcached/implementing-high-availability-services-for-memcached-1911077)
 
         $ telnet 127.0.0.1 11211
         Trying 127.0.0.1...
