@@ -12,7 +12,11 @@ As you run a docker image as a container, it will have an IP address setted by D
 
 To make this work, you'll have to run both containers, check given IPs to each container with `docker network inspect bridge`, access each container with `docker exec -it <name> /bin/bash` and manually change the memcached start command to fit any other parameters you want to change, but must important to add the next container IPs in the `-x` parameter.
 
-The reason why I'm not using file `run.sh` is that it would already start with slave address to 127.0.0.1 but since we want to experiment between docker containers, we must add the containers IP by the bridge driver, but at the same time the IP will only be given after containers is up. For this reason, you will start both containers as `idle` with `-it --entrypoint /bin/bash`. Usage is better explained bellow.
+The reason why I'm not using file `run.sh` is that it would already start with slave address to 127.0.0.1 but since we want to experiment between docker containers, we must add the containers IP by the bridge driver, but at the same time the IP will only be given after containers is up. For this reason, you will start both containers as `idle` with `-it --entrypoint /bin/bash`. 
+
+So far this experiment uses only one direct replication node and ciclic. Broadcasting replication to more than one slave needs to be checked. You can achieve more nodes by chaining them as: `cache3 (slave) -> cache2 (slave) -> cache1 (master)` althought it's unkown the effects of this. In not so distant future, I'll write a paper about it.
+
+Usage is better explained bellow.
 
 Usage
 -----
