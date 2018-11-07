@@ -1,6 +1,6 @@
 FROM ubuntu:trusty
 
-install repcached
+# install repcached
 RUN apt-get update && \
     apt-get install -y gcc make build-essential libevent-1.4-2 libevent-core-1.4-2 libevent1-dev libsasl2-2 sasl2-bin libsasl2-2 libsasl2-dev libsasl2-modules wget pwgen
 
