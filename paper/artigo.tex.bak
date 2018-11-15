@@ -63,8 +63,7 @@ Iniciando os dois \textit{containers} foi então verificado os IPs internos defi
 
 Tal comportamento permite que caso o \textit{slave} caia e retorne em um momento posterior, o mesmo possua todos os dados de \textit{master} e vice-versa. Diferente de estruturas como Redis que possui \textit{slaves} como apenas leitura e propagação direta para \textit{master}, da forma como o Repmemcached é organizado ambos possuem a mesma atribuição
 
-Omitir a definição do IP ou tornar a atribuição do IP pelo parâmetro \textit{-x} inviabiliza o fluxo, sendo necessário reiniciar todo o processo em \textit{master} caso o \textit{slave} caia.
-
+Omitir a definição do IP ou tornar a atribuição do IP pelo parâmetro \textit{-x} inviabiliza o fluxo, sendo necessário 
 
 
 \section{Resultados} 
