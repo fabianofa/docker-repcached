@@ -61,14 +61,38 @@ Exposta a porta 11211, padrão do servidor memcached, então, é inicializado o 
 
 Iniciando os dois \textit{containers} foi então verificado os IPs internos definidos pelo comando \textit{docker network inspect bridge}. Tomando nota dos IPs atribuídos, os serviços memcached foram iniciados em ambos os \textit{containers} apontando o parâmetro \textit{-x} para o IP do \textit{container} oposto. Por isto a atribuição de \textit{master} e \textit{slave} se tornou cíclica.
 
-Tal comportamento permite que caso o \textit{slave} caia e retorne em um momento posterior, o mesmo possua todos os dados de \textit{master} e vice-versa. Diferente de estruturas como Redis que possui \textit{slaves} como apenas leitura e propagação direta para \textit{master}, da forma como o Repmemcached é organizado ambos possuem a mesma atribuição
+Tal comportamento permite que caso o \textit{slave} caia e retorne em um momento posterior, o mesmo possua todos os dados de \textit{master} e vice-versa. Diferente de estruturas como Redis que possui \textit{slaves} como apenas leitura e propagação direta para \textit{master}. Da forma como o Repmemcached é organizado ambos possuem a mesma atribuição
 
-Omitir a definição do IP ou tornar a atribuição do IP pelo parâmetro \textit{-x} inviabiliza o fluxo, sendo necessário 
+Omitir a definição do IP ou tornar a atribuição do IP pelo parâmetro \textit{-x} para 127.0.0.1 inviabiliza o fluxo, sendo necessário reiniciar todo o processo em \textit{master} caso o \textit{slave} caia.
 
+A estrutura utilizada no experimento pode ser visualizada na figura 1.
 
 \section{Resultados} 
 
+Foi possível realizar a replicação de ambientes Memcached com Repcached com sucesso entre \textit{containers} Docker. Uma vez iniciados os \textit{containers}, foi identificado os IPs dos mesmos e finalmente iniciados os serviços via \textit{nohup}, uma vez que os parâmetros estavam melhor dispostos se explicitamente inseridos
+
+Foram nomeados cache1 e cache2 respectivamente e tratada a conectividade de uma aplicação PHP com o cache2, sendo este ponto de entrada de obtenção e escrita da aplicação. Em termos de utilização, pode-se afirmar que a aplicação interagiu diretamente apenas com o cache2 e que devida a funcionalidade de replicação, o cache1 foi alimentado de forma semelhante.
+
+No momento do ensaio de uma queda, para que a aplicação pudesse continuar a consumir de um servidor Memcached, foram atribuídos dois IPs de servidores com pesos distintos. O peso do servidor, no contexto de aplicação PHP, segundo a sua documentação define a prioridade com que a conectividade irá acontecer, assim o servidor com peso maior terá prioridade e uma vez que não for possível conectar, tentara o segundo mais próximo \cite{phpmemcachedserver}. Não é definida a forma de utilização caso os servidores tiverem o mesmo peso.
+
+Em código PHP, é possível definir servidores de replicação dos dados, porém nada condiz com a replicação de informação integral que o Repcached se propõe. Das diretivas do PHP, o que se tem de replicação é a replicação imediata da chave salva pelo próprio script PHP, porém chaves criadas por terceiros não serão replicadas visto que não comunicação entre os servidores.
+
+A replicação em código PHP também não permite que os dados armazenados sejam recuperados em caso de queda de um dos servidores, assim servindo apenas para a replicação em servidores com finalidades distintas ou que possuam replicação não conjunta, isto é, entre outros dois servidores que não se comunicam diretamente.
+
+A aplicação contou com um endpoint em AJAX que demonstrava a informação armazenada diretamente por \textit{telnet}, utilizando das diretivas, uma vez estabelecida conexão com Memcached de \textit{get} e \textit{set}.
+
+Em outro experimento, foi realizada a conexão entre três Dockers, no intuito de aumenta a complexidade cíclica para três servidores. O experimento no entanto falhou pelo motivo de funcionalidade da biblioteca libevent. Dado o ambiente como demonstrado na figura 2, uma entrada no servidor \textit{slave 1} não estaria armazenado do \textit{slave 2}, mas apenas no \textit{master}, pois o \textit{slave 2} está tanto recebendo a informação como enviando para outro servidor que não se comunica diretamente com o ele, no caso, \textit{master}. 
+
+Tal conclusão inviabiliza a utilização de Repmemcache em ambientes que demandam grande complexidade de tolerância a falhas ou que necessitem de um controle de alta disponibilidade visto que conforme seus autores, o Memcached não foi construído como um servidor de alta disponibilidade.
+
+
 \section{Conclusão}
+
+Por meios padrão, não é possível obter a replicação do ambiente Memcached, visto que o mesmo não possui instruções nem foi moldado para tal. Sua natureza de armazenamento de dados apenas em RAM também não prevê qualquer persistência de dados físicos que pudessem justificar a adaptação de outro serviço como leitura dos seus dados.
+
+Assim o uso do Repcached permite a criação de um servidor \textit{master} e um \textit{slave} diretamente conectados, mas não permite a criação de \textit{clusters} de informação. A replicação também não acontece em termos de processamento mas apenas de indicação de lugar na memória em outro endereço de rede além do servidor \textit{master}, não configurando assim o comportamento de \textit{cluster}.
+
+A definição de que o Memcached não possui alta disponibilidade impacta diretamente no consumo atual da informação, dada a vasta capacidade tecnológica que outra ferramentas tem neste assunto, como Redis \cite{Redis}. Cabe aos desenvolvedores e analistas identificarem a utilização do Memcached detalhadamente para evitar perigos de inviabilidade de comunicação por parte de falta de replicação.
 
 \bibliographystyle{IEEEtran}
 \renewcommand{\refname}{Referências}

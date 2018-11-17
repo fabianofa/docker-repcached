@@ -35,8 +35,14 @@ K.~Inc. Repcached. [Accessed: 15- Nov- 2018]. [Online]. Available:
 
 \bibitem{yrobla}
 \BIBentryALTinterwordspacing
-yrobla. Base docker image to run a repcached server. [Accessed: 10- Nov- 2018].
+Yrobla. Base docker image to run a repcached server. [Accessed: 10- Nov- 2018].
   [Online]. Available: \url{https://github.com/yrobla/docker-repcached}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Redis}
+\BIBentryALTinterwordspacing
+Redislabs. Redis. [Accessed: 17- Nov- 2018]. [Online]. Available:
+  \url{https://redis.io/}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}
