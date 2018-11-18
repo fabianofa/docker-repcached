@@ -137,7 +137,7 @@ Em código PHP, é possível definir servidores de replicação dos dados, poré
 
 A replicação em código PHP também não permite que os dados armazenados sejam recuperados em caso de queda de um dos servidores, assim servindo apenas para a replicação em servidores com finalidades distintas ou que possuam replicação não conjunta, isto é, entre outros dois servidores que não se comunicam diretamente.
 
-A aplicação contou com um script PHP que realizada sol em AJAX que demonstrava a informação armazenada diretamente por \textit{telnet}, utilizando das diretivas, uma vez estabelecida conexão com Memcached de \textit{get} e \textit{set}.
+A aplicação contou com um script PHP que realizada solicitações de cache interruptamente com delay de 1 segundo para evitar \textit{overflow} de processamento, demonstrando a informação armazenada diretamente por \textit{telnet}, utilizando das diretivas, uma vez estabelecida conexão com Memcached de \textit{get} e \textit{set}.
 
 Em outro experimento, foi realizada a conexão entre três Dockers, no intuito de aumentar a complexidade cíclica para três servidores. O experimento no entanto falhou pelo motivo de funcionalidade da biblioteca libevent. Dado o ambiente como demonstrado na figura 3, uma entrada no servidor 172.17.0.2 não estaria armazenado do 172.17.0.3, mas apenas em 172.17.0.4, pois o 172.17.0.3 está tanto recebendo a informação como enviando para outro servidor que não se comunica diretamente com o ele, no caso, 172.17.0.4. 
 
