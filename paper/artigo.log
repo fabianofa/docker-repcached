@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.14)  17 NOV 2018 18:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.14)  18 NOV 2018 16:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,7 +818,14 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) (./artigo.aux)
+)) (./artigo.aux
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+)
 \openout1 = `artigo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -835,8 +842,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 13.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 13.
@@ -893,20 +899,48 @@ LaTeX Info: Redefining \nameref on input line 13.
 \@outlinefile=\write3
 \openout3 = `artigo.out'.
 
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+Underfull \hbox (badness 1983) in paragraph at lines 38--39
+[]\OT1/ptm/m/n/10 Um sis-tema tol-er-ante a fal-has tem a ca-paci-dade de
+ []
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 60--61
+[]\OT1/ptm/m/n/10 Confian[]a, por vezes con-fun-dida com disponi-bil-i-dade,
+ []
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
+<figura1.png, id=59, 651.43375pt x 507.8975pt>
+File: figura1.png Graphic file (type png)
+<use figura1.png>
+Package pdftex.def Info: figura1.png  used on input line 90.
+(pdftex.def)             Requested size: 176.39923pt x 137.5294pt.
+ [2 <./figura1.png>]
+<figura2.png, id=73, 489.83pt x 447.6725pt>
+File: figura2.png Graphic file (type png)
+<use figura2.png>
+Package pdftex.def Info: figura2.png  used on input line 124.
+(pdftex.def)             Requested size: 252.0pt x 230.3114pt.
 
-LaTeX Warning: Citation `phpmemcachedserver' on page 2 undefined on input line 
-76.
 
-(./artigo.bbl
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./figura2.png>]
+<figura3.png, id=83, 489.83pt x 461.725pt>
+File: figura3.png Graphic file (type png)
+<use figura3.png>
+Package pdftex.def Info: figura3.png  used on input line 148.
+(pdftex.def)             Requested size: 252.0pt x 237.54092pt.
+ (./artigo.bbl
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -922,37 +956,37 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
-[2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
+[4 <./figura3.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
  (./artigo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
 Package rerunfilecheck Info: File `artigo.out' has not changed.
-(rerunfilecheck)             Checksum: E2CF976A2C5B9633166C5023ECDFEF6E;513.
+(rerunfilecheck)             Checksum: 8F854685484BC046416D4B4A5F5DC0D6;440.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
  ) 
 Here is how much of TeX's memory you used:
- 8066 strings out of 492982
- 117325 string characters out of 6134895
- 215870 words of memory out of 5000000
- 11523 multiletter control sequences out of 15000+600000
- 37859 words of font info for 78 fonts, out of 8000000 for 9000
+ 8098 strings out of 492982
+ 117757 string characters out of 6134895
+ 215131 words of memory out of 5000000
+ 11543 multiletter control sequences out of 15000+600000
+ 38395 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,8n,35p,582b,382s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,8n,35p,773b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.p
-fb>
-Output written on artigo.pdf (2 pages, 57539 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
+tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on artigo.pdf (4 pages, 200431 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 124 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 80 words of extra memory for PDF output out of 10000 (max. 10000000)
 

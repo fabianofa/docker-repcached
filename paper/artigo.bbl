@@ -21,6 +21,24 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{Tanenbaum:2006:DSP:1202502}
+M.~v.~S. Andrew S.~Tanenbaum, \emph{Distributed Systems: Principles and
+  Paradigms (2Nd Edition)}.\hskip 1em plus 0.5em minus 0.4em\relax Upper Saddle
+  River, NJ, USA: Prentice-Hall, Inc., 2006.
+
+\bibitem{herman}
+\BIBentryALTinterwordspacing
+J.~Herman. Fault-tolerance in avionics systems. [Accessed: 18- Nov- 2018].
+  [Online]. Available:
+  \url{https://cs.unc.edu/~anderson/teach/comp790/powerpoints/fault_tolerance.pptx}
+\BIBentrySTDinterwordspacing
+
+\bibitem{memcached}
+\BIBentryALTinterwordspacing
+Packet. Memcached. [Accessed: 18- Nov- 2018]. [Online]. Available:
+  \url{https://memcached.org/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{docker}
 \BIBentryALTinterwordspacing
 Docker. Docker. [Accessed: 15- Nov- 2018]. [Online]. Available:
@@ -33,16 +51,20 @@ K.~Inc. Repcached. [Accessed: 15- Nov- 2018]. [Online]. Available:
   \url{http://repcached.lab.klab.org/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{cachepatent}
+P.~S.-L.~Y. Kevin Michael~Jordan, Kun-Lunk~Wu, ``Load balancing cooperating
+  cache servers by shifting forwarded request,'' Patent US 6\,438\,652, 2002.
+
 \bibitem{yrobla}
 \BIBentryALTinterwordspacing
 Yrobla. Base docker image to run a repcached server. [Accessed: 10- Nov- 2018].
   [Online]. Available: \url{https://github.com/yrobla/docker-repcached}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Redis}
+\bibitem{phpmemcachedserver}
 \BIBentryALTinterwordspacing
-Redislabs. Redis. [Accessed: 17- Nov- 2018]. [Online]. Available:
-  \url{https://redis.io/}
+PHP. Memcached::addservers. [Accessed: 18- Nov- 2018]. [Online]. Available:
+  \url{http://php.net/manual/en/memcached.addservers.php}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

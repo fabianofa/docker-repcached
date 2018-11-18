@@ -8,51 +8,51 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: References.bib
-Warning--I didn't find a database entry for "phpmemcachedserver"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--missing nationality in cachepatent
 
 Done.
-You've used 4 entries,
+You've used 8 entries,
             4087 wiz_defined-function locations,
-            840 strings with 7609 characters,
-and the built_in function-call counts, 1544 in all, are:
-= -- 115
-> -- 16
-< -- 0
-+ -- 8
-- -- 4
-* -- 51
-:= -- 305
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 8
-chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 116
-empty$ -- 137
-format.name$ -- 4
-if$ -- 318
+            859 strings with 8170 characters,
+and the built_in function-call counts, 3246 in all, are:
+= -- 234
+> -- 42
+< -- 10
++ -- 27
+- -- 14
+* -- 107
+:= -- 596
+add.period$ -- 22
+call.type$ -- 8
+change.case$ -- 13
+chr.to.int$ -- 30
+cite$ -- 9
+duplicate$ -- 243
+empty$ -- 299
+format.name$ -- 8
+if$ -- 698
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 32
-newline$ -- 43
-num.names$ -- 4
-pop$ -- 96
+int.to.str$ -- 8
+missing$ -- 61
+newline$ -- 59
+num.names$ -- 8
+pop$ -- 182
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 108
+skip$ -- 232
 stack$ -- 0
-substring$ -- 8
-swap$ -- 64
+substring$ -- 47
+swap$ -- 157
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 4
-warning$ -- 0
-while$ -- 4
-width$ -- 5
-write$ -- 62
+type$ -- 8
+warning$ -- 1
+while$ -- 9
+width$ -- 9
+write$ -- 97
 (There was 1 warning)
